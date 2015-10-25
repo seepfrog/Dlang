@@ -27,7 +27,7 @@ auto fizz(){writeln("fizz");}
 void buzz(){ writeln("buzz");}
 void fizzbuzz(){ writeln("fizzbuzz");}
 
-/*--------------switch fizzbuzz!---------*/
+/*---------switch fizzbuzz!---------------*/
 
 void fizzbuzz_generator_by_switch(int num){
     foreach(x;1 .. num){
