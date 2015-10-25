@@ -2,21 +2,30 @@ import std.stdio;
 
 int main(char[][] arg)
 {
-    fizzbuzz_generator(100);
+    fizzbuzz_generator_by_if(100);
     return 0;
 }
 
 /*fizzbuzz!*/
-void fizzbuzz_generator(int num){
+void fizzbuzz_generator_by_if(int num){
   foreach(x;1 .. num){
     if(x%15==0){
-      writeln("fizzbuzz");
+      fizzbuzz();
     }else if(x%3==0){
-      writeln("fizz");
+      fizz();
     }else if(x%5==0){
-      writeln("buzz");
+      buzz();
     }else {
       writeln(x);
     }
   }
+}
+
+auto fizz(){writeln("fizz");}
+void buzz(){ writeln("buzz");}
+void fizzbuzz(){ writeln("fizzbuzz");}
+
+
+void fizzbuzz_by_switch(int num){
+
 }
