@@ -36,8 +36,8 @@ void fizzbuzz_generator_by_switch(int num){
 
 /*---------write fizzbuzz---------------*/
 
-auto write_fizzbuzz(string name){
-    switch(name){
+auto write_fizzbuzz(string word){
+    switch(word){
       case "fizz"     : writeln("fizz");break;
       case "buzz"     : writeln("buzz");break;
       case "fizzbuzz" : writeln("fizzbuzz");break;
