@@ -13,7 +13,7 @@ unittest {
     static proper2 = proper_linear_congruential_parameters(m, a, c);
 }
 
-
+// x(n+1) = (a * x(n) + 1)mod m
 auto linear_congruential_generators(){
     enum uint a = 1664525, c = 1013904223, x0 = 1780588661;
     auto x = x0;
@@ -32,6 +32,7 @@ ulong Euclidean_algorithm(ulong a, ulong b){
     return a;
 }
 
+
 ulong prime_factors_only(ulong n){
         ulong accum = 1;
         ulong iter = 2;
@@ -43,6 +44,11 @@ ulong prime_factors_only(ulong n){
         return accum * n;
 }
 
+/* check
+    (1) a and c are coprime
+    (2) a - 1 is divisible by all prime factors of m
+    (3) if a - 4 is multiples of 4, m must is multiples of 4
+*/
 bool proper_linear_congruential_parameters(ulong m, ulong a, ulong c){
     if(m == 0 || a == 0 || a >= m || c == 0 || c >= m)
         return false;
