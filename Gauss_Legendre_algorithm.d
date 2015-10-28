@@ -10,7 +10,7 @@ int main(char[][] arg)
 }
 
 auto Gauss_Legendre_algoritm(int num){
-    double a = 1.0, b = 1.0/sqrt(2.0), t = 1.0/4.0, p = 1.0;
+    double a = 1., b = 1./sqrt(2.), t = 1./4., p = 1.;
     auto temp = a;
 
     foreach(i; 0 .. num){
