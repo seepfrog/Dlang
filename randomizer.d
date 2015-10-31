@@ -20,7 +20,7 @@ unittest {
 auto linear_congruential_generators(){
     enum uint a = 1664525, c = 1013904223, x0 = 1780588661;
     auto x = x0;
-    foreach(i; 0 .. 100){
+    foreach(i; 0 .. 50){
         x = a * x + c;
         writeln(x);
     }
@@ -39,10 +39,12 @@ ulong Euclidean_algorithm(ulong a, ulong b){
 ulong prime_factors_only(ulong n){
         ulong accum = 1;
         ulong iter = 2;
-        for(; n >= iter * iter; iter += 2 - (iter == 2)){
-            if(n % iter)continue;
+        for(; n >= iter ^^ 2; iter += 2 - (iter == 2)){
+            if(n % iter != 0) continue;
             accum *= iter;
-            do n /= iter; while(n % iter == 0);
+            do{
+                n /= iter;
+            }while(n % iter == 0);
         }
         return accum * n;
 }
