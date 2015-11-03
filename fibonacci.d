@@ -1,4 +1,4 @@
-import std.stdio,std.algorithm,std.range;
+import std.stdio;
 
 void main()
 {
