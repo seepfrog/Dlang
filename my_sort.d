@@ -16,6 +16,10 @@ void main()
     array.writeln;
 }
 
+/*
+*  バブルソート
+*  foreachは下がっていくような場合には使えないみたい
+*/
 void bubble_sort(int[] array){
     foreach(i; 0 .. array.length -2){
         for(int j = array.length - 1; j > 0; --j){

@@ -18,6 +18,8 @@ unittest {
 /*
  x(n+1) = (a * x(n) + 1)mod m
  m = 2^32
+
+  my_sortに使うために改変
 */
 auto linear_congruential_generators(int n){
     enum uint a = 1664525, c = 1013904223, x0 = 1780588661;
