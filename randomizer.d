@@ -1,10 +1,12 @@
+module randomizer;
 import std.stdio;
-
+/*
 int main(char[][] arg)
 {
     linear_congruential_generators();
     return 0;
 }
+*/
 
 unittest {
     enum ulong m = 1UL << 32, a = 1664525, c = 1013904223;
@@ -17,13 +19,15 @@ unittest {
  x(n+1) = (a * x(n) + 1)mod m
  m = 2^32
 */
-auto linear_congruential_generators(){
+auto linear_congruential_generators(int n){
     enum uint a = 1664525, c = 1013904223, x0 = 1780588661;
     auto x = x0;
-    foreach(i; 0 .. 50){
+    foreach(i; 0 .. n){
         x = a * x + c;
-        writeln(x);
+        //writeln(x);
     }
+    x /= 1000000;
+    return x;
 }
 
 ulong Euclidean_algorithm(ulong a, ulong b){
