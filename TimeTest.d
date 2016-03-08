@@ -11,19 +11,18 @@ void main()
     //timeString.writeln;
     //restoredTime.writeln;
 
-    auto nowHours    = currentTime.hour();
-    auto nowMinuts   = currentTime.minute();
-    auto nowSeconds = currentTime.second();
+    auto beat = GenerateBeat(currentTime);
+    beat.writeln;
+}
 
+auto GenerateBeat(SysTime time){
+    auto hours   = time.hour();
+    auto minuts  = time.minute();
+    auto seconds = time.second();
+    auto beat = 0.0;
 
-    auto nowBeat = 10*(60*(60*(nowHours-8)+nowMinuts)+nowSeconds)/(24*36);
+    beat = 10.0*(60.0*(60.0*(hours-8.0)+minuts)+seconds)/(24.0*36.0);
+    if(beat < 0) beat += 1000;
 
-    if(nowBeat < 0) nowBeat += 1000;
-
-    nowHours.writeln;
-    nowMinuts.writeln;
-    nowSeconds.writeln;
-
-    nowBeat.writeln;
-
+    return beat;
 }
